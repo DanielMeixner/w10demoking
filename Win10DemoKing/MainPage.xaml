@@ -1,0 +1,97 @@
+﻿<Page
+    x:Class="Win10DemoKing.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Win10DemoKing"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF0193BA"  >
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="txtLogo.FontSize" Value="20"></Setter>
+                        <Setter Target="tbSymbol.FontSize" Value="20"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="MidState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+         <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
+        
+        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+            <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol" Foreground="White" Text="♚" FontSize="50"></TextBlock>
+            <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
+        </RelativePanel>
+
+        <SplitView x:Name="MyStackPanel" Grid.Row="1"  DisplayMode="CompactOverlay"  IsPaneOpen="True"  CompactPaneLength="40"  >
+            <SplitView.Pane >
+                <StackPanel Background="#FF13728B">
+                    <RelativePanel>
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnLaunchSpec" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLaunchSpec_Click" ></Button>
+                        <TextBlock Text="Sample for Launch Specific"  Foreground="White"   RelativePanel.RightOf="btnLaunchSpec" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLaunchSpec" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnLFR" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLFR_Click" ></Button>
+                        <TextBlock Text="Sample for LaunchForResults"  Foreground="White"   RelativePanel.RightOf="btnLFR" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLFR" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE1D8;" Margin="0,12,0,0" x:Name="btnRelative" Foreground="White"  FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnRelative_Click" ></Button>
+                        <TextBlock Text="Sample for Relative Controls"  Foreground="White"   RelativePanel.RightOf="btnRelative" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnRelative" />
+                    </RelativePanel>
+                    
+                    <RelativePanel>
+                        <Button Content="&#xE128;" Margin="0,12,0,0" x:Name="btnMap"  Foreground="White" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnMap_Click" ></Button>
+                        <TextBlock Text="Sample for Map"  Foreground="White"   RelativePanel.RightOf="btnMap" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnMap" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE193;" Margin="0,12,0,0" x:Name="btnInk"  Foreground="White" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnInk_Click" ></Button>
+                        <TextBlock Text="Sample for Ink"   Foreground="White"  RelativePanel.RightOf="btnInk" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnInk" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE148;" Margin="0,12,0,0" x:Name="btnBtAds" Foreground="White"  FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnBtAds_Click" ></Button>
+                        <TextBlock Text="Sample for BT Ads"  Foreground="White"   RelativePanel.RightOf="btnBtAds" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnBtAds" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnApp2App" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnApp2App_Click" ></Button>
+                        <TextBlock Text="Sample for App to App"  Foreground="White"   RelativePanel.RightOf="btnApp2App" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnApp2App" />
+                    </RelativePanel>
+
+                    
+                </StackPanel>
+
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MainFrame"></Frame>
+            </SplitView.Content>
+        </SplitView>
+
+    </Grid>
+</Page>
