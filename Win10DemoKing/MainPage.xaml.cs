@@ -77,5 +77,11 @@ namespace Win10DemoKing
             MainFrame.Navigate(typeof(LaunchUri));
             MyStackPanel.IsPaneOpen = false;
         }
+
+        private void btnDragDrop_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(DropPage));
+            MyStackPanel.IsPaneOpen = false;
+        }
     }
 }
