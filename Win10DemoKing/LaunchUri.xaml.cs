@@ -45,7 +45,7 @@ namespace Win10DemoKing
             opt.TargetApplicationPackageFamilyName = "5579e526-d499-4ae1-85fe-cfaf695ad82d_e7qah2kqbxs60";
 
             // token
-            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///images/netto.jpg"));
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///images/DMX.jpg"));
             string tok = SharedStorageAccessManager.AddFile(file);
             uriString = uriString += "&file=" + tok;
 

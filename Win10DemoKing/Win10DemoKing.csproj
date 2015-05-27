@@ -150,7 +150,7 @@
     <None Include="Win10DemoKing_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\netto.jpg" />
+    <Content Include="images\DMX.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
