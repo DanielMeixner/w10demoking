@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "WebDemoKing"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-WebDemoKing-8f51877f-9193-41be-99c9-e1b08aac37d4;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

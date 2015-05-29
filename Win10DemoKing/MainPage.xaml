@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF0193BA"  >
+    <Grid Background="Gainsboro"  >
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
@@ -34,18 +34,18 @@
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition  Height="100"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
-         <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
-        
+        <Grid Background="#FF87BEEC">
         <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
 
             <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol" Foreground="White" Text="♚" FontSize="50"></TextBlock>
             <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
         </RelativePanel>
-
+        </Grid>
+         <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
         <SplitView x:Name="MyStackPanel" Grid.Row="1"  DisplayMode="CompactOverlay"  IsPaneOpen="True"  CompactPaneLength="40"  >
             <SplitView.Pane >
                 <StackPanel Background="#FF13728B">
