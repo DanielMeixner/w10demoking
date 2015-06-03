@@ -13,3 +13,10 @@ don't expect exception handling here. It's rather an attempt to answer questions
 Make sure you start these Apps once, to register correctly on the system.
 
 Have fun with it mod it fork it ... but keep it simple.
+
+# More Info
+Find info on my own Blog: http://www.DevelopersDevelopersDevelopersDevelopers.net 
+
+Find more info on all things related to Windows app development on Microsoft Virtual Academy: http://www.microsoftvirtualacademy.com
+
+Follow me on twitter: https://twitter.com/DanielMeixner
