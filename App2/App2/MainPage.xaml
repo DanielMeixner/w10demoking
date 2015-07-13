@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Slider">
+
+        </Style>
+    </Page.Resources>
+
+    <Grid  Padding="100" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Horizontal">
+            <ComboBox Name="cb"></ComboBox>
+            <Grid Height="400" Background="Red" Width="120">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="MyValue" 
+                             Grid.Row="0"
+                             FontSize="20"
+                             Width="Auto"
+                         TextAlignment="Right"
+                         Text="{Binding Value, 
+                    ElementName=MySly, Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                         FontFamily="Microsoft Sans Serif"></TextBox>
+
+                <Slider  
+                    Width="Auto"
+                        Orientation="Vertical" 
+                         HorizontalAlignment="Center"
+                        Value="45" 
+                        Name="MySly"
+                        Grid.Row="1"
+                        Maximum="127" 
+                    Minimum="0"
+                     Foreground="Green"
+                     Background="Orange"
+                    
+                     TickFrequency="5"
+                     TickPlacement="Outside" ValueChanged="MySly_ValueChanged" 
+                 
+                    
+                    
+                     />
+
+
+            </Grid>
+
+            <local:MySlider Width="100" Height="500" x:Name="MyCCSlider">
+            </local:MySlider>
+
+            <local:MySlider Width="100" Height="500" x:Name="My13Slider">
+            </local:MySlider>
+            <local:MySlider Width="100" Height="500" x:Name="My14Slider">
+            </local:MySlider>
+            <local:MySlider Width="100" Height="500" x:Name="My15Slider">
+            </local:MySlider>
+
+
+            <!--<TextBox  Text="{Binding SliderValue, Mode=TwoWay, Source={StaticResource MyVM}}"></TextBox>
+            -->
+                        <!--<TextBlock  Text="{Binding Mode=OneWay, Path=SliderValue}"></TextBlock>-->
+                        <Button Content="click" Click="Button_Click"  ></Button>
+                        <Button Content="list" Click="ListButton"></Button>
+        </StackPanel>
+
+    </Grid>
+</Page>
+<!--Value="{Binding SliderValue, Mode=TwoWay, Source={StaticResource MyVM}}"-->
