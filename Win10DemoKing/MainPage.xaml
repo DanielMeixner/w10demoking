@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Gainsboro"  >
+    <Grid Background="#FF490A3D"  >
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
@@ -37,58 +37,67 @@
             <RowDefinition  Height="100"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <Grid Background="#FF87BEEC">
+
+        <Grid Background="#FF8A9B0F">
         <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-            <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol" Foreground="White" Text="♚" FontSize="50"></TextBlock>
+            <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol"  Text="♚" FontSize="50"></TextBlock>
             <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
         </RelativePanel>
         </Grid>
          <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
         <SplitView x:Name="MyStackPanel" Grid.Row="1"  DisplayMode="CompactOverlay"  IsPaneOpen="True"  CompactPaneLength="40"  >
             <SplitView.Pane >
-                <StackPanel Background="#FF13728B">
+                <StackPanel Background="#FFBD1550">
                     <RelativePanel>
-                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnLaunchSpec" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLaunchSpec_Click" ></Button>
-                        <TextBlock Text="Sample for Launch Specific"  Foreground="White"   RelativePanel.RightOf="btnLaunchSpec" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLaunchSpec" />
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"  x:Name="btnLaunchSpec" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLaunchSpec_Click" ></Button>
+                        <TextBlock Text="Sample for Launch Specific"    RelativePanel.RightOf="btnLaunchSpec" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLaunchSpec" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnLFR" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLFR_Click" ></Button>
-                        <TextBlock Text="Sample for LaunchForResults"  Foreground="White"   RelativePanel.RightOf="btnLFR" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLFR" />
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"  x:Name="btnLFR" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnLFR_Click" ></Button>
+                        <TextBlock Text="Sample for LaunchForResults"    RelativePanel.RightOf="btnLFR" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnLFR" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE1D8;" Margin="0,12,0,0" x:Name="btnRelative" Foreground="White"  FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnRelative_Click" ></Button>
-                        <TextBlock Text="Sample for Relative Controls"  Foreground="White"   RelativePanel.RightOf="btnRelative" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnRelative" />
+                        <Button Content="&#xE1D8;" Margin="0,12,0,0" x:Name="btnRelative"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnRelative_Click" ></Button>
+                        <TextBlock Text="Sample for Relative Controls"     RelativePanel.RightOf="btnRelative" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnRelative" />
                     </RelativePanel>
                     
                     <RelativePanel>
-                        <Button Content="&#xE128;" Margin="0,12,0,0" x:Name="btnMap"  Foreground="White" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnMap_Click" ></Button>
-                        <TextBlock Text="Sample for Map"  Foreground="White"   RelativePanel.RightOf="btnMap" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnMap" />
+                        <Button Content="&#xE128;" Margin="0,12,0,0" x:Name="btnMap"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnMap_Click" ></Button>
+                        <TextBlock Text="Sample for Map"   RelativePanel.RightOf="btnMap" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnMap" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE193;" Margin="0,12,0,0" x:Name="btnInk"  Foreground="White" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnInk_Click" ></Button>
-                        <TextBlock Text="Sample for Ink"   Foreground="White"  RelativePanel.RightOf="btnInk" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnInk" />
+                        <Button Content="&#xE193;" Margin="0,12,0,0" x:Name="btnInk"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnInk_Click" ></Button>
+                        <TextBlock Text="Sample for Ink"    RelativePanel.RightOf="btnInk" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnInk" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE148;" Margin="0,12,0,0" x:Name="btnBtAds" Foreground="White"  FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnBtAds_Click" ></Button>
-                        <TextBlock Text="Sample for BT Ads"  Foreground="White"   RelativePanel.RightOf="btnBtAds" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnBtAds" />
+                        <Button Content="&#xE148;" Margin="0,12,0,0" x:Name="btnBtAds"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnBtAds_Click" ></Button>
+                        <TextBlock Text="Sample for BT Ads"    RelativePanel.RightOf="btnBtAds" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnBtAds" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnApp2App" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnApp2App_Click" ></Button>
-                        <TextBlock Text="Sample for App to App"  Foreground="White"   RelativePanel.RightOf="btnApp2App" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnApp2App" />
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"   x:Name="btnApp2App" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnApp2App_Click" ></Button>
+                        <TextBlock Text="Sample for App to App"     RelativePanel.RightOf="btnApp2App" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnApp2App" />
                     </RelativePanel>
 
                     <RelativePanel>
-                        <Button Content="&#xE1F2;" Margin="0,12,0,0" Foreground="White"  x:Name="btnDragDrop" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnDragDrop_Click" ></Button>
-                        <TextBlock Text="Sample for Drag and Drop"  Foreground="White"   RelativePanel.RightOf="btnDragDrop" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnDragDrop" />
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"  x:Name="btnDragDrop" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnDragDrop_Click" ></Button>
+                        <TextBlock Text="Sample for Drag and Drop"    RelativePanel.RightOf="btnDragDrop" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnDragDrop" />
                     </RelativePanel>
-                    
+
+                    <RelativePanel>
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"   x:Name="btnCortana" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnCortana_Click" ></Button>
+                        <TextBlock Text="Sample for Cortana"     RelativePanel.RightOf="btnCortana" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnCortana" />
+                    </RelativePanel>
+
+                    <RelativePanel>
+                        <Button Content="&#xE1F2;" Margin="0,12,0,0"   x:Name="btnWifi" FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnWifi_Click" ></Button>
+                        <TextBlock Text="Sample for Wifi"     RelativePanel.RightOf="btnWifi" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnWifi" />
+                    </RelativePanel>
                 </StackPanel>
 
             </SplitView.Pane>

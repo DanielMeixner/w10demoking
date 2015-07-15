@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF2193B2">
+    <Grid Background="#FFE97F02">
         <StackPanel>
         <TextBox Name="tb" Text="Trigger the Service to convert this text to upper case." Foreground="White"></TextBox>
-            <Button Content="Trigger Service" Click="Button_Click" Foreground="White" ></Button>
+            <Button Content="Trigger Service" Click="Button_Click"  ></Button>
         </StackPanel>
     </Grid>
 </Page>

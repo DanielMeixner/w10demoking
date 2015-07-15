@@ -118,6 +118,9 @@
     <Compile Include="BtAdsPage.xaml.cs">
       <DependentUpon>BtAdsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CortanaRecognition.xaml.cs">
+      <DependentUpon>CortanaRecognition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DropPage.xaml.cs">
       <DependentUpon>DropPage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,9 @@
     <Compile Include="RelativePage.xaml.cs">
       <DependentUpon>RelativePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="wifi.xaml.cs">
+      <DependentUpon>wifi.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -150,6 +156,7 @@
     <None Include="Win10DemoKing_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Commands.xml" />
     <Content Include="images\DMX.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
@@ -168,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BtAdsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CortanaRecognition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +207,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="RelativePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wifi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

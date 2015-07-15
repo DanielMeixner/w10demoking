@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.ApplicationInsights;
+using Windows.Media.SpeechRecognition;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
@@ -38,7 +39,18 @@ namespace Win10DemoKing
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           
             
+        }
+
+        private async void RegisterVCD()
+        {
+
+            var storageFile =
+              await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(
+                new Uri("ms-appx:///Commands.xml"));
+            await
+              Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
         }
 
         /// <summary>
@@ -48,7 +60,8 @@ namespace Win10DemoKing
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
+            // Register VCD for Cortana
+          
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -85,16 +98,73 @@ namespace Win10DemoKing
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+
+            RegisterVCD();
             // Ensure the current window is active
+
             Window.Current.Activate();
         }
 
-        /// <summary>
-        /// Invoked when Navigation to a certain page fails
-        /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            
+            if (args.Kind != Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
+            {
+
+                DoSpeechStuff(args);
+                return;
+            }
+
+            base.OnActivated(args);
+        }
+
+        private void DoSpeechStuff(IActivatedEventArgs e)
+        {
+     
+            var commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+
+            SpeechRecognitionResult speechRecognitionResult =
+              commandArgs.Result;
+
+            // Get the name of the voice command and the text spoken
+            string voiceCommandName = speechRecognitionResult.RulePath[0];
+            string textSpoken = speechRecognitionResult.Text;
+            // The commandMode is either "voice" or "text", and it indicates how the voice command was entered by the user.
+            // Apps should respect "text" mode by providing feedback in a silent form.
+
+            SpeechRecognitionSemanticInterpretation sss;
+            
+            //string commandMode = ("commandMode", speechRecognitionResult);
+
+            switch (voiceCommandName)
+            {
+                case "showTripToDestination":
+                    // Access the value of the {destination} phrase in the voice command
+                    string destination = speechRecognitionResult.SemanticInterpretation.Properties["destination"][0];
+                    // Create a navigation parameter string to pass to the page
+                    //navigationParameterString = string.Format("{0}|{1}|{2}|{3}",
+                    //                voiceCommandName, commandMode, textSpoken, destination);
+                    //// Set the page where to navigate for this voice command
+                    //navigateToPageType = typeof(TripPage);
+                    break;
+
+                default:
+                    // There is no match for the voice command name. Navigate to MainPage
+                    //navigateToPageType = typeof(MainPage);
+                    break;
+            }
+         
+        }
+
+    
+
+
+    /// <summary>
+    /// Invoked when Navigation to a certain page fails
+    /// </summary>
+    /// <param name="sender">The Frame which failed navigation</param>
+    /// <param name="e">Details about the navigation failure</param>
+    void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }

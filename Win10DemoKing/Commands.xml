@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="commandSet_en-us">
+    <CommandPrefix> Demo King </CommandPrefix>
+    <Example> When is my trip to Las Vegas? </Example>
+
+    <Command Name="whenIsTripToDestination">
+      <Example> When is my trip to Las Vegas?</Example>
+      <ListenFor> when is [my] trip to {destination} </ListenFor>
+      <Feedback> Looking for trip to {destination} </Feedback>
+      <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+    </Command>
+
+      
+    <PhraseList Label="destination">
+      <Item> Las Vegas </Item>
+      <Item> Dallas </Item>
+      <Item> New York </Item>
+    </PhraseList>    
+
+
+
+  </CommandSet>
+
+  <!-- Other CommandSets for other languages -->
+
+</VoiceCommands>

@@ -25,8 +25,13 @@ namespace Win10DemoKing
         public MainPage()
         {
             this.InitializeComponent();
+
+           
             MainFrame.Navigate(typeof(RelativePage));
         }
+
+
+         
 
         private void btnContent_Click(object sender, RoutedEventArgs e)
         {
@@ -81,6 +86,18 @@ namespace Win10DemoKing
         private void btnDragDrop_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(typeof(DropPage));
+            MyStackPanel.IsPaneOpen = false;
+        }
+
+        private void btnCortana_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(CortanaRecognition));
+            MyStackPanel.IsPaneOpen = false;
+        }
+
+        private void btnWifi_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(wifi));
             MyStackPanel.IsPaneOpen = false;
         }
     }

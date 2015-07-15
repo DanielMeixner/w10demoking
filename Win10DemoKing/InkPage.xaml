@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF23BBE4" >
+    <Grid Background="#FF8A9B0F" >
         <Image Source="images/DMX.jpg" Stretch="UniformToFill"></Image>
         <InkCanvas Name="MyInkCanvas"></InkCanvas>
     </Grid>

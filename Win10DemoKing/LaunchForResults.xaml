@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FFA3D5F1">
+    <Grid Background="#FF490A3D">
         <StackPanel>
-        <Button Name="btnLaunch" Click="btnLaunch_Click" Content="Launch For Results" Foreground="Black"></Button>
-        <Button Name="btnLaunchSpecific" Click="btnLaunchSpecific_Click" Content="Launch Specific" Foreground="Black"></Button>
+        <Button Name="btnLaunch" Click="btnLaunch_Click" Content="Launch For Results" ></Button>
+        <Button Name="btnLaunchSpecific" Click="btnLaunchSpecific_Click" Content="Launch Specific" ></Button>
         </StackPanel>
     </Grid>
 </Page>
