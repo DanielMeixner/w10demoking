@@ -43,10 +43,17 @@ namespace Win10DemoKing
                 sp.Children.Clear();
                 foreach (var item in nwAdapter.NetworkReport.AvailableNetworks)
                 {
+                    StackPanel s = new StackPanel();
+                    s.Orientation = Orientation.Horizontal;
                     Button b = new Button();
+                    TextBlock t = new TextBlock();
+                    t.Text = $"{item.NetworkRssiInDecibelMilliwatts} {item.ChannelCenterFrequencyInKilohertz} {item.IsWiFiDirect} {item.NetworkKind} {item.SecuritySettings.NetworkAuthenticationType} {item.SecuritySettings.NetworkAuthenticationType} {item.SignalBars} {item.Uptime}";
                     b.Content += item.Ssid;
+                    
                     b.Click += B_Click;
-                    sp.Children.Add(b);                    
+                    s.Children.Add(b);
+                    s.Children.Add(t);
+                    sp.Children.Add(s);
 
                 }
 
@@ -63,6 +70,8 @@ namespace Win10DemoKing
             string ssid = b.Content as string;
             var nw = nwAdapter.NetworkReport.AvailableNetworks.Where(y => y.Ssid.ToLower() == ssid).FirstOrDefault();
             await nwAdapter.ConnectAsync(nw, WiFiReconnectionKind.Automatic);
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
