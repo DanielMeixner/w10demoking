@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -36,13 +37,12 @@ namespace Win10DemoKing
             var imageSource = new BitmapImage();
             imageSource.SetSource(await file.OpenReadAsync());
             myImg.Source = imageSource;
-
-
         }
 
         private void OnDragOver(object sender, DragEventArgs e)
         {
             myGrid.Background = new SolidColorBrush(Colors.Red);
+            e.AcceptedOperation = DataPackageOperation.Copy;
         }
 
         private void OnDragLeave(object sender, DragEventArgs e)

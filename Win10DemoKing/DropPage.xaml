@@ -8,10 +8,14 @@
     mc:Ignorable="d">
   
         <Grid Name="myGrid"
-              Background="#FF8A9B0F" AllowDrop="True" 
+              Background="#FF490A3D" AllowDrop="True" 
               
-              Drop="OnDropped" DragOver="OnDragOver" DragLeave="OnDragLeave" >
+              DragOver="OnDragOver" DragLeave="OnDragLeave" >
+        <Canvas AllowDrop="True" Background="AntiqueWhite" Drop="OnDropped"
+                >
             <Image Name="myImg"></Image>
+        </Canvas>
+            
         </Grid>
         
         
