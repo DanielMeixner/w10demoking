@@ -50,6 +50,9 @@
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>HostedWebApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\Users\danmeix\Desktop\</AppxPackageDir>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">

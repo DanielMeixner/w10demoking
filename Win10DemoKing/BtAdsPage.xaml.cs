@@ -42,7 +42,7 @@ namespace Win10DemoKing
             watcher.Received += OnAdvertisementReceived;
         }
 
-      async  private void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
+        async private void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
         {
 
             // The timestamp of the event
@@ -61,6 +61,7 @@ namespace Win10DemoKing
             // If there is, print the raw data of the first manufacturer section (if there are multiple).
             string manufacturerDataString = "";
             var manufacturerSections = eventArgs.Advertisement.ManufacturerData;
+            var res = String.Empty;
             if (manufacturerSections.Count > 0)
             {
                 // Only print the first one of the list
@@ -70,10 +71,26 @@ namespace Win10DemoKing
                 {
                     reader.ReadBytes(data);
                 }
+
+                var str = BitConverter.ToString(data);
+
+
+                //Char.ConvertFromUtf32(value);
+                
+                string[] hexValuesSplit = str.Split('-');
+                foreach (String hex in hexValuesSplit)
+                {
+                    int value = Convert.ToInt32(hex, 16);
+                    string stringValue = Char.ConvertFromUtf32(value);
+                    char charValue = (char)value;
+                    res += charValue;
+                }
+
+
                 // Print the company ID + the raw data in hex format
                 manufacturerDataString = string.Format("0x{0}: {1}",
-                    manufacturerData.CompanyId.ToString("X"),
-                    BitConverter.ToString(data));
+                    manufacturerData.CompanyId.ToString("X"), res);
+
             }
 
             // Serialize UI update to the main UI thread
@@ -81,12 +98,7 @@ namespace Win10DemoKing
             {
                 // Display these inf
 
-                myTextBox.Text =  string.Format("[{0}]: type={1}, rssi={2}, name={3}, manufacturerData=[{4}]",
-                    timestamp.ToString("hh\\:mm\\:ss\\.fff"),
-                    advertisementType.ToString(),
-                    rssi.ToString(),
-                    localName,
-                    manufacturerDataString);
+                myTextBox.Text = $"[{timestamp.ToString("hh\\:mm\\:ss\\.fff")}]: {res}]";
             });
         }
 
@@ -155,7 +167,7 @@ namespace Win10DemoKing
 
         public void PublishInfo()
         {
-            
+
 
             var manufacturerData = new BluetoothLEManufacturerData();
             manufacturerData.CompanyId = 0xFFFE;

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FFF8CA00">
+    <Grid Background="#FF490A3D">
         <Button Content="Recognize"  Click="StartRecognition"></Button>
     </Grid>
 </Page>

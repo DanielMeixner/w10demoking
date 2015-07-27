@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="96c2d9dc-db94-4093-9425-baa201d2ec19"
+    Name="96c2d9dc-db94-4093-9425-baa201d2ec1988"
     Publisher="CN=danmeix"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="96c2d9dc-db94-4093-9425-baa201d2ec19" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Win10DemoKing</DisplayName>
+    <DisplayName>Win10DemoKing88</DisplayName>
     <PublisherDisplayName>danmeix</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -40,6 +40,11 @@
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.appService" EntryPoint="Win10DemoKing_VoiceCommandService.PingPongVoiceCommandService">
+          <uap:AppService Name="PingPongVoiceCommandService"/>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
 
@@ -47,5 +52,6 @@
     <Capability Name="internetClient" />
     <DeviceCapability Name="microphone" />
     <DeviceCapability Name="wiFiControl" />
+    <DeviceCapability Name="bluetooth" />
   </Capabilities>
 </Package>

@@ -43,15 +43,7 @@ namespace Win10DemoKing
             
         }
 
-        private async void RegisterVCD()
-        {
-
-            var storageFile =
-              await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(
-                new Uri("ms-appx:///Commands.xml"));
-            await
-              Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
-        }
+        
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -99,7 +91,7 @@ namespace Win10DemoKing
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
 
-            RegisterVCD();
+            
             // Ensure the current window is active
 
             Window.Current.Activate();
@@ -138,7 +130,7 @@ namespace Win10DemoKing
 
             switch (voiceCommandName)
             {
-                case "showTripToDestination":
+                case "howIsDestination":
                     // Access the value of the {destination} phrase in the voice command
                     string destination = speechRecognitionResult.SemanticInterpretation.Properties["destination"][0];
                     // Create a navigation parameter string to pass to the page

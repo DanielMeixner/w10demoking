@@ -5,13 +5,25 @@
     xmlns:local="using:Win10DemoKing"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tg="using:Win10DemoKing"
     mc:Ignorable="d">
 
     <Grid Background="#FF490A3D"  >
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
+                <!--<VisualState x:Name="NetworkState">
+                    <VisualState.StateTriggers>
+                        <tg:CustomNetworkTrigger RequiredLevel="InternetAccess" ></tg:CustomNetworkTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="nwLogo.Visibility" Value="Visible"></Setter>
+                    </VisualState.Setters>
+                </VisualState>-->
+                
+                
                 <VisualState x:Name="NarrowState">
+
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1"/>
                     </VisualState.StateTriggers>
@@ -39,13 +51,14 @@
         </Grid.RowDefinitions>
 
         <Grid Background="#FF8A9B0F">
-        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-            <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol"  Text="♚" FontSize="50"></TextBlock>
-            <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
-        </RelativePanel>
+                <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol"  Text="♚" FontSize="50"></TextBlock>
+                <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
+                <!--<TextBlock x:Name="nwLogo" FontFamily="Mistral" Text="InternetAccess" Visibility="Collapsed"  Foreground="White"  FontSize="50" RelativePanel.RightOf="txtLogo" ></TextBlock>-->
+            </RelativePanel>
         </Grid>
-         <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
+        <Button Grid.Row="0" Content="&#xE700;" Foreground="White" x:Name="btnContent" FontFamily="Segoe MDL2 Assets" Width="40" Height="40" VerticalAlignment="Bottom" Click="btnContent_Click" ></Button>
         <SplitView x:Name="MyStackPanel" Grid.Row="1"  DisplayMode="CompactOverlay"  IsPaneOpen="True"  CompactPaneLength="40"  >
             <SplitView.Pane >
                 <StackPanel Background="#FFBD1550">
@@ -63,7 +76,7 @@
                         <Button Content="&#xE1D8;" Margin="0,12,0,0" x:Name="btnRelative"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnRelative_Click" ></Button>
                         <TextBlock Text="Sample for Relative Controls"     RelativePanel.RightOf="btnRelative" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnRelative" />
                     </RelativePanel>
-                    
+
                     <RelativePanel>
                         <Button Content="&#xE128;" Margin="0,12,0,0" x:Name="btnMap"   FontFamily="Segoe UI Symbol" Width="40" Height="40" Click="btnMap_Click" ></Button>
                         <TextBlock Text="Sample for Map"   RelativePanel.RightOf="btnMap" Margin="12,0,0,0" RelativePanel.AlignBottomWith="btnMap" />

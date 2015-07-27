@@ -33,7 +33,6 @@ namespace Win10DemoKing
         public async void Scan()
         {
             var access = await WiFiAdapter.RequestAccessAsync();
-
             var result = await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(WiFiAdapter.GetDeviceSelector());
             if (result.Count >= 1)
             {
@@ -56,11 +55,6 @@ namespace Win10DemoKing
                     sp.Children.Add(s);
 
                 }
-
-        
-                
-                
-
             }
         }
 

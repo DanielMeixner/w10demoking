@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -41,12 +42,17 @@ namespace LaunchForResults_Target
             this.Suspending += OnSuspending;
         }
 
-        protected override void OnActivated(IActivatedEventArgs args)
+        async protected override void OnActivated(IActivatedEventArgs args)
         {
             if (args.Kind == ActivationKind.ProtocolForResults)
             {
 
                 ProtocolForResultsActivatedEventArgs ea = args as ProtocolForResultsActivatedEventArgs;
+
+                // take a rest
+                await Task.Delay(4000);
+
+                // wait for user input oder simply return a value
                 var resultData = new ValueSet();
                 resultData.Add("Result", "Hello from Result Target");
                 ea.ProtocolForResultsOperation.ReportCompleted(resultData);                

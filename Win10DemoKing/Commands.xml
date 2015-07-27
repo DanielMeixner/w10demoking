@@ -2,21 +2,34 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="commandSet_en-us">
     <CommandPrefix> Demo King </CommandPrefix>
-    <Example> When is my trip to Las Vegas? </Example>
+    <Example> How is </Example>
 
-    <Command Name="whenIsTripToDestination">
-      <Example> When is my trip to Las Vegas?</Example>
-      <ListenFor> when is [my] trip to {destination} </ListenFor>
-      <Feedback> Looking for trip to {destination} </Feedback>
-      <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+    <!--NAVIGATE-->
+    <Command Name="howIsDestination">
+      <Example> How is ?</Example>
+      <ListenFor> How is {name} </ListenFor>
+      <Feedback> Looking for {name} </Feedback>
+      <Navigate/>
     </Command>
 
+    <!--Background-->
+    <Command Name="sendPingPong">
+      <Example> Send a Ping </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> Send a {type} </ListenFor>      
+      <Feedback> Sending a {type}</Feedback>
+      <VoiceCommandService Target="PingPongVoiceCommandService"/>
+    </Command>
       
-    <PhraseList Label="destination">
-      <Item> Las Vegas </Item>
-      <Item> Dallas </Item>
-      <Item> New York </Item>
-    </PhraseList>    
+    <PhraseList Label="name">
+      <Item> Paul </Item>
+      <Item> John </Item>
+      <Item> Peter </Item>
+    </PhraseList>
+
+    <PhraseList Label="type">
+      <Item> Ping </Item>
+      <Item> Pong </Item>
+          </PhraseList>
 
 
 
