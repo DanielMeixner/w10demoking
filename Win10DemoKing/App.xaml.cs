@@ -14,12 +14,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.ApplicationInsights;
+
 using Windows.Media.SpeechRecognition;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
-namespace Win10DemoKing
+namespace Windows10DemoKing
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -29,7 +29,7 @@ namespace Win10DemoKing
         /// <summary>
         /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
         /// </summary>
-        public TelemetryClient TelemetryClient = new TelemetryClient();
+        //public TelemetryClient TelemetryClient = new TelemetryClient();
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

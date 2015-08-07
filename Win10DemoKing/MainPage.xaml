@@ -5,8 +5,9 @@
     xmlns:local="using:Win10DemoKing"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
     xmlns:tg="using:Win10DemoKing"
-    mc:Ignorable="d">
+    >
 
     <Grid Background="#FF490A3D"  >
 
@@ -52,7 +53,7 @@
 
         <Grid Background="#FF8A9B0F">
             <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-
+                <TextBlock x:Name="Newtb"></TextBlock>
                 <TextBlock x:Name="tbSymbol" FontFamily="Segoe UI Symbol"  Text="♚" FontSize="50"></TextBlock>
                 <TextBlock x:Name="txtLogo" FontFamily="Mistral" Text="Windows 10 Demo King"  Foreground="White"  FontSize="50" RelativePanel.RightOf="tbSymbol" ></TextBlock>
                 <!--<TextBlock x:Name="nwLogo" FontFamily="Mistral" Text="InternetAccess" Visibility="Collapsed"  Foreground="White"  FontSize="50" RelativePanel.RightOf="txtLogo" ></TextBlock>-->

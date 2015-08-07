@@ -20,7 +20,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Win10DemoKing
+namespace Windows10DemoKing
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -29,8 +29,9 @@ namespace Win10DemoKing
     {
         public MainPage()
         {
+            
             this.InitializeComponent();
-
+            
 
             MainFrame.Navigate(typeof(RelativePage));
             RegisterVCD();
@@ -76,6 +77,7 @@ namespace Win10DemoKing
 
         private void btnApp2App_Click(object sender, RoutedEventArgs e)
         {
+            
             MainFrame.Navigate(typeof(App2AppPage));
             MyStackPanel.IsPaneOpen = false;
         }
