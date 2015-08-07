@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="commandSet_en-us">
-    <CommandPrefix>Demo King</CommandPrefix>
+    <CommandPrefix>King</CommandPrefix>
     <Example> How is </Example>
 
     <!--NAVIGATE-->
