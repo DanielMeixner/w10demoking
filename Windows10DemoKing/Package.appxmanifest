@@ -32,5 +32,6 @@
     <DeviceCapability Name="microphone" />
     <DeviceCapability Name="wiFiControl" />
     <DeviceCapability Name="bluetooth" />
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>
