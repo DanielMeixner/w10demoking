@@ -31,10 +31,40 @@
       <Item> Pong </Item>
           </PhraseList>
 
-
-
   </CommandSet>
 
+    <CommandSet xml:lang="de-de" Name="commandSet_de-de">
+    <CommandPrefix>King</CommandPrefix>
+    <Example> Wie geht es </Example>
+
+    <!--NAVIGATE-->
+    <Command Name="howIsDestination">
+      <Example> Wie geht es ?</Example>
+      <ListenFor> Wie geht es {name} </ListenFor>
+      <Feedback> Suche nach {name} </Feedback>
+      <Navigate/>
+    </Command>
+
+    <!--Background-->
+    <Command Name="sendPingPong">
+      <Example> Send a Ping </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> Send a {type} </ListenFor>      
+      <Feedback> Sending a {type}</Feedback>
+      <VoiceCommandService Target="PingPongVoiceCommandService102040"/>
+    </Command>
+      
+    <PhraseList Label="name">
+      <Item> Paul </Item>
+      <Item> John </Item>
+      <Item> Peter </Item>
+    </PhraseList>
+
+    <PhraseList Label="type">
+      <Item> Ping </Item>
+      <Item> Pong </Item>
+          </PhraseList>
+
+  </CommandSet>
   <!-- Other CommandSets for other languages -->
 
 </VoiceCommands>

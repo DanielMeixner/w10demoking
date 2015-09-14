@@ -31,15 +31,31 @@ namespace Windows10DemoKing
 
         }
 
-        private void NewMethod()
+        private async void NewMethod()
         {
-            BasicGeoposition b = new BasicGeoposition();
-            b.Latitude = 48.279301;
-            b.Longitude = 11.582600;
-            Geopoint g = new Geopoint(b);
+            BasicGeoposition b;
 
+            var accessStatus = await Geolocator.RequestAccessAsync();
+
+            if (accessStatus == GeolocationAccessStatus.Allowed)
+            {
+                Geolocator geolocator = new Geolocator();
+                Geoposition pos = await geolocator.GetGeopositionAsync();
+                b = new BasicGeoposition();
+                b.Latitude = pos.Coordinate.Point.Position.Latitude;
+                b.Longitude = pos.Coordinate.Point.Position.Longitude;
+            }
+            else
+            { 
+
+                b = new BasicGeoposition();
+                b.Latitude = 48.279301;
+                b.Longitude = 11.582600;
+            }
+
+            Geopoint g = new Geopoint(b);
             MyMapControl.Center = g;
-            MyMapControl.ZoomLevel = 12;
+            MyMapControl.ZoomLevel = 13;
         }
     }
 }

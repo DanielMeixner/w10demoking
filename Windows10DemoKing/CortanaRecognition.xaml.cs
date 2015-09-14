@@ -39,8 +39,8 @@ namespace Windows10DemoKing
 
             // Start recognition.
             SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
-            
-            
+            //SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeAsync();
+
 
             // Do something with the recognition result.
             var messageDialog = new MessageDialog(speechRecognitionResult.Text, "Text spoken");
