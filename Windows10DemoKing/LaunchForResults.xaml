@@ -11,6 +11,7 @@
         <StackPanel>
         <Button Name="btnLaunch" Click="btnLaunch_Click" Content="Launch For Results" ></Button>
         <Button Name="btnLaunchSpecific" Click="btnLaunchSpecific_Click" Content="Launch Specific" ></Button>
+            <TextBlock Name="tb"></TextBlock>
         </StackPanel>
     </Grid>
 </Page>

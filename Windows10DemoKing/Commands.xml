@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="commandSet_en-us">
-    <CommandPrefix>King</CommandPrefix>
+    <CommandPrefix>Windows Demo King</CommandPrefix>
     <Example> How is </Example>
 
     <!--NAVIGATE-->
     <Command Name="howIsDestination">
-      <Example> How is ?</Example>
+      <Example>Windows Demo King, How is ?</Example>
       <ListenFor> How is {name} </ListenFor>
       <Feedback> Looking for {name} </Feedback>
       <Navigate/>
@@ -14,7 +14,7 @@
 
     <!--Background-->
     <Command Name="sendPingPong">
-      <Example> Send a Ping </Example>
+      <Example>Windows Demo King, send a Ping </Example>
       <ListenFor RequireAppName="BeforeOrAfterPhrase"> Send a {type} </ListenFor>      
       <Feedback> Sending a {type}</Feedback>
       <VoiceCommandService Target="PingPongVoiceCommandService102040"/>

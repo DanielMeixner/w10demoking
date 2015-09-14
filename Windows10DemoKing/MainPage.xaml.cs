@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -31,9 +32,12 @@ namespace Windows10DemoKing
         {
             this.InitializeComponent();
 
-
+            Debug.WriteLine(Windows.ApplicationModel.Package.Current.Id.FamilyName);
             MainFrame.Navigate(typeof(RelativePage));
             RegisterVCD();
+
+
+            //var bar = StatusBar.GetForCurrentView();
 
         }
         private async void RegisterVCD()

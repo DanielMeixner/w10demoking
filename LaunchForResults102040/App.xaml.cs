@@ -23,6 +23,10 @@ namespace LaunchForResults102040
     /// </summary>
     sealed partial class App : Application
     {
+
+        public Dictionary<string, object> mem = new Dictionary<string, object>();
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -39,15 +43,8 @@ namespace LaunchForResults102040
             {
 
                 ProtocolForResultsActivatedEventArgs ea = args as ProtocolForResultsActivatedEventArgs;
-
-                // take a rest
-                await Task.Delay(4000);
-
-                // wait for user input oder simply return a value
-                var resultData = new ValueSet();
-                resultData.Add("Result", "Hello from Result Target");
-                ea.ProtocolForResultsOperation.ReportCompleted(resultData);
-
+                mem["ResultsOperation"] = ea.ProtocolForResultsOperation;
+                NavigateToMain();
             }
         }
 
@@ -66,6 +63,11 @@ namespace LaunchForResults102040
             }
 #endif
 
+            NavigateToMain();
+        }
+
+        private void NavigateToMain()
+        {
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -77,10 +79,10 @@ namespace LaunchForResults102040
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    //TODO: Load state from previously suspended application
-                }
+                //if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                //{
+                //    //TODO: Load state from previously suspended application
+                //}
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
@@ -91,7 +93,7 @@ namespace LaunchForResults102040
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(MainPage));
             }
             // Ensure the current window is active
             Window.Current.Activate();

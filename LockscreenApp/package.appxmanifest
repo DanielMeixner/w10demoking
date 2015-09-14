@@ -14,6 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
+    <!-- Webpage lockscreenweb.azurewebsites.net created by my colleague Dariusz Parys-->
     <Application Id="App" StartPage="http://lockscreenweb.azurewebsites.net/">
       <uap:VisualElements DisplayName="LockscreenApp" Description="LockscreenApp" BackgroundColor="transparent" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
@@ -23,6 +24,11 @@
       <uap:ApplicationContentUriRules>
         <uap:Rule Match="http://lockscreenweb.azurewebsites.net/" Type="include" WindowsRuntimeAccess="all" />
       </uap:ApplicationContentUriRules>
+      <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="lockscreen" />
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

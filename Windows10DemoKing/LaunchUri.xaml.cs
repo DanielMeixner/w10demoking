@@ -36,6 +36,10 @@ namespace Windows10DemoKing
             string uriString = "demoking102040:key=value123";
             await Launcher.LaunchUriAsync(new Uri(uriString));
         }
+
+
+
+
         private async void btnLaunchUriSpecific_Click(object sender, RoutedEventArgs e)
         {
             string uriString = "demoking102040:key=value123";
@@ -43,14 +47,11 @@ namespace Windows10DemoKing
 
             // PFN
             opt.TargetApplicationPackageFamilyName = "5082b433-03c4-4db0-abf6-d2d63493f851_e7qah2kqbxs60";
-
-            // token
-            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///images/DMX.jpg"));
-            string tok = SharedStorageAccessManager.AddFile(file);
-            uriString = uriString += "&file=" + tok;
-
+            
             await Launcher.LaunchUriAsync(new Uri(uriString),opt);
         }
+
+       
 
         private async void btnQueryLaunchInfo_Click(object sender, RoutedEventArgs e)
         {
@@ -68,10 +69,33 @@ namespace Windows10DemoKing
             }
         }
 
-        private async void btnFindAlHandlers_Click(object sender, RoutedEventArgs e)
+
+        #region hide
+        #region // token
+async void Doit()
+        {
+            string uriString = "demoking102040:key=value123";
+            var opt = new LauncherOptions();
+
+            // PFN
+            opt.TargetApplicationPackageFamilyName = "5082b433-03c4-4db0-abf6-d2d63493f851_e7qah2kqbxs60";
+
+
+            //token
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///images/bild.jpg"));
+            string tok = SharedStorageAccessManager.AddFile(file);
+            
+            uriString = uriString += "&file=" + tok;
+
+            await Launcher.LaunchUriAsync(new Uri(uriString), opt);
+        }
+        #endregion
+        private async void btnFindAllHandlers_Click(object sender, RoutedEventArgs e)
         {
             // doesnt work!
             //var providers = await Launcher.FindUriSchemeHandlersAsync("demoking");
         }
+
+        #endregion
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
@@ -31,14 +32,24 @@ namespace Windows10DemoKing
 
         private async void btnLaunch_Click(object sender, RoutedEventArgs e)
         {
+            ShowNumbersAsync();
             var options = new LauncherOptions();
             options.TargetApplicationPackageFamilyName = "5082b433-03c4-4db0-abf6-d2d63493f851_e7qah2kqbxs60";
-            var res = await Windows.System.Launcher.LaunchUriForResultsAsync(
-                new Uri("demoking102040:/key=val"), options);
+            var res = await Windows.System.Launcher.LaunchUriForResultsAsync(new Uri("demoking102040:/key=val"), options);
             
             var msg = res.Result["Result"] as string;
             await new MessageDialog(msg).ShowAsync();
 
+        }
+
+        private async void ShowNumbersAsync()
+        {
+
+            for (int i = 0; i < 999; i++)
+            {
+                tb.Text = i.ToString(); ;
+                await Task.Delay(1000);
+            }
         }
 
         private void btnLaunchSpecific_Click(object sender, RoutedEventArgs e)
